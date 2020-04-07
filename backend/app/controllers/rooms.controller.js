@@ -17,45 +17,46 @@ const fetchFromFile = () => {
 };
 
 const createRoomFileSync = () => {
-  const roomsData = [];
-
-  roomsData[0] = {
-    id: uuid(),
-    name: "The Dock",
-    disableMeeting: true,
-  };
-
-  const niceNames = [
-    "Nebuchadnezzar",
-    "Logos",
-    "Osiris",
-    "Icarus",
-    "Caduceus",
-    "Brahma",
-    "Novalis",
-    "Vigilant",
-    "Zion",
-  ];
-
-  for (const niceName of niceNames) {
-    roomsData.push({
+  const roomsData = [
+    {
       id: uuid(),
-      name: niceName
-    });
-  }
+      name: "Geral",
+      externalMeetUrl: "https://meet.google.com/vrx-phky-zch"
+    },
+    {
+      id: uuid(),
+      name: "Dev",
+      externalMeetUrl: "https://meet.google.com/qpt-pmji-ums"
+    },
+    {
+      id: uuid(),
+      name: "Adm",
+      externalMeetUrl: "https://meet.google.com/tie-yetg-ngf"
+    },
+    {
+      id: uuid(),
+      name: "Design (Somente Caio Permitido)",
+      externalMeetUrl: "https://meet.google.com/uyg-zyrd-rsw"
+    },
+    {
+      id: uuid(),
+      name: "Outros",
+      externalMeetUrl: "https://meet.google.com/csh-atho-mao"
+    }
+  ];
 
   fs.mkdirSync(path.dirname(roomFilePath), { recursive: true });
   fs.writeFileSync(roomFilePath, JSON.stringify(roomsData));
 };
 
-const fetchFromEnvironment = (env) => {
+const fetchFromEnvironment = env => {
   const roomsData = env.ROOMS_DATA;
   const roomsDetail = JSON.parse(roomsData);
 
   return new Promise(resolve => resolve(roomsDetail));
 };
 
-const fetchRooms = (strategy) => {
+const fetchRooms = strategy => {
   switch (strategy) {
     // TODO add suport to fetch from endpoint
     case "ENVIRONMENT":
