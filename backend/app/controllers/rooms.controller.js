@@ -21,27 +21,27 @@ const createRoomFileSync = () => {
     {
       id: uuid(),
       name: "Geral",
-      externalMeetUrl: "https://meet.google.com/vrx-phky-zch",
+      // externalMeetUrl: "https://meet.google.com/vrx-phky-zch",
     },
     {
       id: uuid(),
       name: "Dev",
-      externalMeetUrl: "https://meet.google.com/qpt-pmji-ums",
+      // externalMeetUrl: "https://meet.google.com/qpt-pmji-ums",
     },
     {
       id: uuid(),
       name: "Adm",
-      externalMeetUrl: "https://meet.google.com/tie-yetg-ngf",
+      // externalMeetUrl: "https://meet.google.com/tie-yetg-ngf",
     },
     {
       id: uuid(),
       name: "Design",
-      externalMeetUrl: "https://meet.google.com/uyg-zyrd-rsw",
+      // externalMeetUrl: "https://meet.google.com/uyg-zyrd-rsw",
     },
     {
       id: uuid(),
       name: "Outros",
-      externalMeetUrl: "https://meet.google.com/csh-atho-mao",
+      // externalMeetUrl: "https://meet.google.com/csh-atho-mao",
     },
   ];
 
